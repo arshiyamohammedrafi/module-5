@@ -75,7 +75,8 @@ int main()
 ## OUTPUT
 
 
-![WhatsApp Image 2025-04-27 at 15 43 15_8f831725](https://github.com/user-attachments/assets/88c775a6-69a4-4f16-b4d4-46cfed414d42)
+![WhatsApp Image 2025-04-27 at 15 43 15_acc0748e](https://github.com/user-attachments/assets/0e827968-1593-49e9-b5a7-8025b50b71ad)
+
 
 
 ## RESULT
@@ -102,27 +103,35 @@ To write a C Program to store the student information and display it using struc
 ```
 #include <stdio.h>
 struct Student {
+    int rollno;
     char name[50];
-    int rollNumber;
-    float marks;
+    float percentage;
 };
+void inputStudentDetails(struct Student* s) 
+{
+    scanf("%d", &s->rollno);
+    getchar();
+    fgets(s->name, sizeof(s->name), stdin);
+    scanf("%f", &s->percentage);
+}
+void displayStudentDetails(struct Student s) {
+    printf("Rollno is: %d\n", s.rollno);
+    printf("Name is: %s", s.name);
+    printf("Percentage is: %.2f", s.percentage);
+}
+
 int main() {
-    struct Student student;
-    
-    scanf("%s", student.name);
-    scanf("%d", &student.rollNumber);
-    scanf("%f", &student.marks); 
-    printf("Displaying Information:\n");
-    printf("Name: %s\n", student.name);
-    printf("Roll number: %d\n", student.rollNumber);
-    printf("Marks: %.1f\n", student.marks); 
+    struct Student student; 
+    inputStudentDetails(&student);
+    displayStudentDetails(student);
     return 0;
 }
 ```
 
 ## OUTPUT
 
-![437769894-2f4b8886-4cc7-4064-a08c-9101c58bb2fc](https://github.com/user-attachments/assets/a95d44a4-a09b-4b30-b766-46c2416d38ce)
+![WhatsApp Image 2025-04-27 at 15 43 15_2efbced3](https://github.com/user-attachments/assets/8650bfad-c80e-44ec-9dc3-a919fd1be246)
+
 
 
 ## RESULT
@@ -149,7 +158,8 @@ To write a C Program to read and store the data of 3 employees and calculate the
 ## PROGRAM
 ```
 
-#include<stdio.h>
+
+        #include<stdio.h>
 struct employee
 {
     int eno;
@@ -180,7 +190,7 @@ int main()
  ## OUTPUT
 
  
-![WhatsApp Image 2025-04-27 at 15 43 16_a5284d92](https://github.com/user-attachments/assets/1a64f95d-a92c-4ffc-aa79-d561877f1725)
+![WhatsApp Image 2025-04-27 at 15 43 16_e5706501](https://github.com/user-attachments/assets/ab0857ea-3e9a-40ba-9cbb-a49ec050b223)
 
 
  
