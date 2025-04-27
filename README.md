@@ -50,12 +50,13 @@ To write a C Program to print 'WELCOME' using malloc() and free().
 ```
 #include <stdio.h>
 #include <stdlib.h>
-int main() {
-    char *str;
-    str = (char *)malloc(8 * sizeof(char));
-    if (str == NULL) {
-        printf("Memory allocation failed.\n");
-        return 1;
+int main()
+{
+    char *str = (char *)malloc(8 * sizeof(char));
+    if (str == NULL)
+    {
+        printf("Memory allocation failed!\n");
+        return 1; 
     }
     str[0] = 'W';
     str[1] = 'E';
@@ -64,16 +65,18 @@ int main() {
     str[4] = 'O';
     str[5] = 'M';
     str[6] = 'E';
-    str[7] = '\0'; 
-    printf("The string is: %s\n", str);
+    str[7] = '\0';
+    printf("%s\n", str);
     free(str);
-    return 0;
+
+    return 0;
 }
 ```
 ## OUTPUT
 
 
-![437769796-a16fe715-2060-4807-8af9-07828c6e96f7](https://github.com/user-attachments/assets/a06c8075-6702-458b-93e4-8e62dbe04084)
+![WhatsApp Image 2025-04-27 at 15 43 15_8f831725](https://github.com/user-attachments/assets/88c775a6-69a4-4f16-b4d4-46cfed414d42)
+
 
 ## RESULT
 Thus the program to print 'WELCOME' using malloc() and free() has been executed successfully
@@ -145,30 +148,31 @@ To write a C Program to read and store the data of 3 employees and calculate the
 
 ## PROGRAM
 ```
-#include<stdio.h>
-struct employee{
-    char empname[20];
-    int empno;
-    float basic_pay,da,hra,gross_salary;
-};
 
+#include<stdio.h>
+struct employee
+{
+    int eno;
+    char dept[20];
+    float basicPay;
+    float da;
+    float hra;
+    float grossSalary;
+};
 int main()
 {
-    struct employee e[3];
-    int i;
-    for (i=0;i<3;i++){
-        scanf("%s",e[i].empname);
-        scanf("%d",&e[i].empno);
-        scanf("%f",&e[i].basic_pay);
-        
-        e[i].da=e[i].basic_pay*0.10;
-        e[i].hra=e[i].basic_pay*0.30;
-        e[i].gross_salary=e[i].da+e[i].hra+e[i].basic_pay;
- 
+    struct employee emp[3];
+    for(int i=0;i<3;i++)
+    {
+        scanf("%d %s %f",&emp[i].eno,emp[i].dept,&emp[i].basicPay);
+        emp[i].da=emp[i].basicPay*0.10;
+        emp[i].hra=emp[i].basicPay*0.30;
+        emp[i].grossSalary=emp[i].basicPay+emp[i].da+emp[i].hra;
     }
     printf("Details of the Employee:\n");
-    for (i=0;i<3;i++){ 
-        printf("Employeename:%s\nEmployeeID:%d\nBasic Pay:%.f\nGross salary:%.2f\n",e[i].empname,e[i].empno,e[i].basic_pay,e[i].gross_salary); 
+    for(int i=0;i<3;i++)
+    {
+        printf("%d %s %.0f %.0f %.0f %.2f\n",emp[i].eno,emp[i].dept,emp[i].basicPay,emp[i].da,emp[i].hra,emp[i].grossSalary);
     }
 }
 ```
@@ -176,7 +180,8 @@ int main()
  ## OUTPUT
 
  
-![437769995-8a98f125-7a72-4d06-abe5-93d82f7083ca](https://github.com/user-attachments/assets/909db131-7195-48a8-8346-30c730a843eb)
+![WhatsApp Image 2025-04-27 at 15 43 16_a5284d92](https://github.com/user-attachments/assets/1a64f95d-a92c-4ffc-aa79-d561877f1725)
+
 
  
 
